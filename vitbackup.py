@@ -20,8 +20,6 @@ def list_folder(path):
         else:
             folders.append(path)
 
-    print(files)
-
     return folders, files
 
 
@@ -84,7 +82,7 @@ def backup():
         with open(args.log_file, 'a') as f:
             f.write('The source folder is empty. Exiting...\n')
 
-        print(f'\n{Fore.RED}The source folder is empty. Exiting...{Fore.RESET}')
+        print(f'\n{Style.BRIGHT}{Fore.RED}The source folder is empty. Exiting...{Fore.RESET}')
 
         os.abort()
 
@@ -108,7 +106,7 @@ def backup():
 
         log_info.append((str(folder), size))
     
-    print(f'\n{Fore.GREEN}SUCCESS{Fore.RESET}')
+    print(f'\n{Style.BRIGHT}{Fore.GREEN}SUCCESS{Fore.RESET}')
     print(log(log_info))
 
     write_log(log_info)
@@ -127,6 +125,6 @@ try:
 
         time.sleep(args.time)
 except KeyboardInterrupt:
-    print(f'\n{Fore.RED}Exiting...{Fore.RESET}')
+    print(f'\n{Style.BRIGHT}{Fore.RED}Exiting...{Fore.RESET}')
 
     os.abort()
